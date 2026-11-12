@@ -2,6 +2,30 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<script>
+/* 共有リンク対応:URLが「#share=…」付きなら、その内容をこの端末に取り込む(index_ticketdive.html は不要)。
+   同じリンクを開き直しても、あとから変えた設定は消さない。リンクが変わったときだけ入れ替える */
+(function () {
+  try {
+    var m = /^#share=([A-Za-z0-9_-]+)$/.exec(location.hash);
+    if (!m) return;
+    var raw = m[1].replace(/-/g, '+').replace(/_/g, '/');
+    while (raw.length % 4) raw += '=';
+    var bin = atob(raw), bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    var text = new TextDecoder().decode(bytes);
+    var data = JSON.parse(text);
+    var id = String(text.length) + ':' + (function (s) { var h = 5381; for (var j = 0; j < s.length; j++) h = ((h << 5) + h + s.charCodeAt(j)) | 0; return h; })(text);
+    if (localStorage.getItem('tdShareId') !== id) {
+      var keys = ["userInput", "userName", "userGroup", "eventTitle", "eventDate", "eventShowtime", "eventImage", "eventVenue", "eventTicketType", "eventUrl"], reset = ["ticketColorOverride", "ticketEnteredAt", "ticketReferenceOverride"];
+      keys.forEach(function (k) { if (data[k] != null) localStorage.setItem(k, data[k]); else localStorage.removeItem(k); });
+      reset.forEach(function (k) { localStorage.removeItem(k); });
+      localStorage.setItem('tdShareId', id);
+    }
+    history.replaceState(null, '', location.pathname + location.search); // 住所欄から内容を消す
+  } catch (e) {}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>チケット一覧 | TicketDive Mock</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -292,6 +292,14 @@
       保存
     </button>
 
+    <div style="margin-top:28px; padding-top:16px; border-top:1px solid #ddd;">
+      <div style="font-weight:bold; margin-bottom:6px;">チケット一覧だけを渡す(共有リンク)</div>
+      <div style="font-size:12px; color:#666; margin-bottom:8px;">先に「保存」を押してから作ります。リンクを開いた人の端末に、今の入力内容がコピーされます。</div>
+      <button type="button" class="btn" id="makeShareBtn" style="background:#fff;border:1px solid #3399cc;color:#3399cc;">共有リンクを作る</button>
+      <textarea id="shareLinkBox" readonly rows="4" style="display:none; width:100%; margin-top:8px; font-size:12px; word-break:break-all;"></textarea>
+      <button type="button" class="btn" id="copyShareBtn" style="display:none; margin-top:6px;">リンクをコピー</button>
+    </div>
+
     <div class="link-area">
       <a href="ticketdive_mock.html" class="btn link disabled" id="goLink">
         GO
@@ -1371,6 +1379,32 @@
 
   button.addEventListener('click', tryUnlock);
   input.addEventListener('keydown', function (e) { if (e.key === 'Enter') tryUnlock(); });
+})();
+</script>
+<script>
+/* 共有リンク:保存した内容をURLの「#share=」の後ろに入れる(サーバーには送られない)。相手は ticketdive_mock.html だけ開く */
+(function () {
+  var KEYS = ["userInput", "userName", "userGroup", "eventTitle", "eventDate", "eventShowtime", "eventImage", "eventVenue", "eventTicketType", "eventUrl"];
+  var box = document.getElementById('shareLinkBox');
+  var copyBtn = document.getElementById('copyShareBtn');
+  function b64url(str) {
+    var bytes = new TextEncoder().encode(str), bin = '';
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  document.getElementById('makeShareBtn').addEventListener('click', function () {
+    var data = {};
+    KEYS.forEach(function (k) { try { var v = localStorage.getItem(k); if (v != null && v !== '') data[k] = v; } catch (e) {} });
+    var url = new URL('ticketdive_mock.html', location.href);
+    url.search = ''; url.hash = 'share=' + b64url(JSON.stringify(data));
+    box.value = url.href; box.style.display = 'block'; copyBtn.style.display = 'block';
+    box.select();
+  });
+  copyBtn.addEventListener('click', function () {
+    box.select();
+    try { navigator.clipboard.writeText(box.value).then(function () { copyBtn.textContent = 'コピーしました'; }); }
+    catch (e) { document.execCommand('copy'); copyBtn.textContent = 'コピーしました'; }
+  });
 })();
 </script>
 </body></html>

@@ -40,9 +40,9 @@
         </a>
         <div class="FlexBox_flex__8_6hs" style="gap:1.2rem;align-items:center;">
           <button id="header-search-button" class="Button_medium__spjE8 Button_textMain__kKo_k NavHeader_searchButtonSp__9R_Tj" style="width:4.4rem;height:4.4rem" type="button"><div class="Icon_outer__xwR_2" style="--color:var(--b2);--size:2.4rem;cursor:inherit;width:2.0rem"><svg fill="none" viewBox="0 0 15 14" xmlns="http://www.w3.org/2000/svg"><path d="M.572 5.82q0-1.148.43-2.153A5.7 5.7 0 0 1 2.207 1.89q.765-.772 1.77-1.203a5.5 5.5 0 0 1 2.16-.431q1.155 0 2.16.43a5.5 5.5 0 0 1 1.778 1.204q.766.765 1.197 1.777.437 1.005.437 2.153 0 .903-.28 1.716a5.5 5.5 0 0 1-.76 1.484l3.118 3.13a.84.84 0 0 1 .212.322q.075.184.075.39 0 .286-.13.519a.983.983 0 0 1-.875.499q-.204 0-.396-.075a.9.9 0 0 1-.335-.22l-3.138-3.137a5.8 5.8 0 0 1-1.435.69 5.3 5.3 0 0 1-1.627.247 5.5 5.5 0 0 1-2.16-.43 5.6 5.6 0 0 1-1.771-1.197q-.765-.765-1.203-1.77a5.5 5.5 0 0 1-.43-2.168m1.456 0q0 .855.315 1.6.321.745.888 1.312.568.561 1.313.882a4 4 0 0 0 1.593.322q.855 0 1.6-.322A4.15 4.15 0 0 0 9.93 7.42q.321-.745.321-1.6 0-.848-.321-1.592a4.18 4.18 0 0 0-2.195-2.195 4 4 0 0 0-1.6-.321 4 4 0 0 0-1.592.321q-.745.315-1.313.882a4.2 4.2 0 0 0-.888 1.313 4.1 4.1 0 0 0-.315 1.592" fill="currentColor"></path></svg></div></button>
-          <form class="NavHeader_searchInputWrapperPc__zZ0GW">
+          <form id="header-search-form-pc" class="NavHeader_searchInputWrapperPc__zZ0GW">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 14" style="width:1.7rem;flex-shrink:0;"><path fill="#8a8a8a" d="M.572 5.82q0-1.148.43-2.153A5.7 5.7 0 0 1 2.207 1.89q.765-.772 1.77-1.203a5.5 5.5 0 0 1 2.16-.431q1.155 0 2.16.43a5.5 5.5 0 0 1 1.778 1.204q.766.765 1.197 1.777.437 1.005.437 2.153 0 .903-.28 1.716a5.5 5.5 0 0 1-.76 1.484l3.118 3.13a.84.84 0 0 1 .212.322q.075.184.075.39 0 .286-.13.519a.983.983 0 0 1-.875.499q-.204 0-.396-.075a.9.9 0 0 1-.335-.22l-3.138-3.137a5.8 5.8 0 0 1-1.435.69 5.3 5.3 0 0 1-1.627.247 5.5 5.5 0 0 1-2.16-.43 5.6 5.6 0 0 1-1.771-1.197q-.765-.765-1.203-1.77a5.5 5.5 0 0 1-.43-2.168m1.456 0q0 .855.315 1.6.321.745.888 1.312.568.561 1.313.882a4 4 0 0 0 1.593.322q.855 0 1.6-.322A4.15 4.15 0 0 0 9.93 7.42q.321-.745.321-1.6 0-.848-.321-1.592a4.18 4.18 0 0 0-2.195-2.195 4 4 0 0 0-1.6-.321 4 4 0 0 0-1.592.321q-.745.315-1.313.882a4.2 4.2 0 0 0-.888 1.313 4.1 4.1 0 0 0-.315 1.592"></path></svg>
-            <input type="search" placeholder="イベント/出演者/会場名で検索" class="NavHeader_searchInput__pahev" value="">
+            <input id="header-search-input-pc" type="search" enterkeyhint="search" inputmode="search" placeholder="イベント/出演者/会場名で検索" class="NavHeader_searchInput__pahev" value="">
           </form>
           <button id="header-menu-button" class="NavHeader_button__doNBI" type="button"><span></span><span></span><span></span></button>
         </div>
@@ -282,9 +282,9 @@
 <!-- スマホ用の検索欄(本物と同じ見た目。検索ボタンを押すと出る) -->
 <div id="header-search-modal" class="NavHeader_searchModal__JPqGi" style="display:none;">
   <div class="FlexBox_flex__8_6hs NavHeader_searchModalInner__H37D5" style="align-items:center;gap:1.2rem;">
-    <form class="NavHeader_searchInputWrapperSp__cP4zj" style="display:flex;align-items:center;gap:0.6rem;">
+    <form id="header-search-form-sp" class="NavHeader_searchInputWrapperSp__cP4zj" style="display:flex;align-items:center;gap:0.6rem;">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 14" style="width:1.7rem;flex-shrink:0;"><path fill="#8a8a8a" d="M.572 5.82q0-1.148.43-2.153A5.7 5.7 0 0 1 2.207 1.89q.765-.772 1.77-1.203a5.5 5.5 0 0 1 2.16-.431q1.155 0 2.16.43a5.5 5.5 0 0 1 1.778 1.204q.766.765 1.197 1.777.437 1.005.437 2.153 0 .903-.28 1.716a5.5 5.5 0 0 1-.76 1.484l3.118 3.13a.84.84 0 0 1 .212.322q.075.184.075.39 0 .286-.13.519a.983.983 0 0 1-.875.499q-.204 0-.396-.075a.9.9 0 0 1-.335-.22l-3.138-3.137a5.8 5.8 0 0 1-1.435.69 5.3 5.3 0 0 1-1.627.247 5.5 5.5 0 0 1-2.16-.43 5.6 5.6 0 0 1-1.771-1.197q-.765-.765-1.203-1.77a5.5 5.5 0 0 1-.43-2.168m1.456 0q0 .855.315 1.6.321.745.888 1.312.568.561 1.313.882a4 4 0 0 0 1.593.322q.855 0 1.6-.322A4.15 4.15 0 0 0 9.93 7.42q.321-.745.321-1.6 0-.848-.321-1.592a4.18 4.18 0 0 0-2.195-2.195 4 4 0 0 0-1.6-.321 4 4 0 0 0-1.592.321q-.745.315-1.313.882a4.2 4.2 0 0 0-.888 1.313 4.1 4.1 0 0 0-.315 1.592"></path></svg>
-      <input id="header-search-input" type="search" placeholder="イベント/出演者/会場名で検索" class="NavHeader_searchInput__pahev">
+      <input id="header-search-input" type="search" enterkeyhint="search" inputmode="search" placeholder="イベント/出演者/会場名で検索" class="NavHeader_searchInput__pahev">
     </form>
     <span id="header-search-cancel" class="NavHeader_cancelSearch__9rV_L">キャンセル</span>
   </div>
@@ -303,7 +303,7 @@
         </div>
       </div>
     </a>
-    <a class="AnchorLink_anchor__kfgGH NavMenu_link__b5F68" href="#">
+    <a class="AnchorLink_anchor__kfgGH NavMenu_link__b5F68" href="https://ticketdive.com/favorite">
       <div class="FlexBox_flex__8_6hs" style="align-items:center;">
         <div class="FlexBox_flex__8_6hs" style="gap:1.2rem;">
           <span class="Typography_root__9AOcJ enFont" style="--color:var(--b1);font-size:3.6rem;font-weight:400;">Favorite</span>
@@ -311,7 +311,7 @@
         </div>
       </div>
     </a>
-    <a class="AnchorLink_anchor__kfgGH NavMenu_link__b5F68" href="#">
+    <a class="AnchorLink_anchor__kfgGH NavMenu_link__b5F68" href="https://ticketdive.com/application">
       <div class="FlexBox_flex__8_6hs" style="align-items:center;">
         <div class="FlexBox_flex__8_6hs" style="gap:1.2rem;">
           <span class="Typography_root__9AOcJ enFont" style="--color:var(--b1);font-size:3.6rem;font-weight:400;">Entries</span>
@@ -327,7 +327,7 @@
         </div>
       </div>
     </a>
-    <a class="AnchorLink_anchor__kfgGH NavMenu_link__b5F68" href="#">
+    <a class="AnchorLink_anchor__kfgGH NavMenu_link__b5F68" href="https://ticketdive.com/account">
       <div class="FlexBox_flex__8_6hs" style="align-items:center;">
         <div class="FlexBox_flex__8_6hs" style="gap:1.2rem;">
           <span class="Typography_root__9AOcJ enFont" style="--color:var(--b1);font-size:3.6rem;font-weight:400;">Account</span>
@@ -336,7 +336,7 @@
       </div>
     </a>
   </div>
-  <a id="header-logout-link" href="index_ticketdive.html" style="text-decoration:none;">
+  <a id="header-logout-link" href="https://ticketdive.com" style="text-decoration:none;">
     <div class="FlexBox_flex__8_6hs NavMenu_logoutButton__6DFNq">
       <span class="Typography_root__9AOcJ" style="--color:var(--red1);font-size:1.6rem;font-weight:700;">ログアウト</span>
     </div>
@@ -369,7 +369,15 @@
 
   setText('detail-event-name', eventTitle);
   var detailLink = document.getElementById('detail-link');
-  if (detailLink && get('eventUrl')) detailLink.setAttribute('href', get('eventUrl'));
+  if (detailLink) {
+    // 入力ページで保存したイベントURLがあればそれを使う。
+    // 無ければ、保存したイベント名でTicketDive内を検索したページ。それも無ければ、初期表示のイベントのページ。
+    var savedUrl = get('eventUrl');
+    var detailHref = /^https?:\/\//.test(savedUrl) ? savedUrl
+      : (eventTitle ? 'https://ticketdive.com/search?q=' + encodeURIComponent(eventTitle)
+                    : 'https://ticketdive.com/event/platinumhalloween2026');
+    detailLink.setAttribute('href', detailHref);
+  }
   setText('detail-venue', eventVenue);
   setText('detail-purchaser-name', userName);
   setText('detail-favorite-artist', userGroup);
@@ -841,10 +849,40 @@
 (function () {
   function $(id) { return document.getElementById(id); }
 
-  // ---- スマホ用の検索欄: 検索ボタンで開き、キャンセルで閉じる ----
+  // ---- 検索(本物と同じ動き) ----
+  //  ・送信すると、入力した文字(前後の空白は除く)で ticketdive.com/search?q=… へ移動する。空のときは何もしない
+  //  ・移動中は、暗い画面と回転マークを出す
+  //  ・パソコン用とスマホ用の検索欄は、入力した文字を共有している
+  //  ・「キャンセル」は検索欄を閉じるだけで、入力した文字は消さない
+  //  ・日本語入力の変換を確定するだけのEnterでは送信されない(ブラウザ標準のフォーム送信を使うため)
+  var SEARCH_URL = 'https://ticketdive.com/search?q=';
   var searchModal = $('header-search-modal');
   var searchButton = $('header-search-button');
   var searchInput = $('header-search-input');
+  var searchInputPc = $('header-search-input-pc');
+  var searching = false;
+
+  function syncText(from, to) {
+    if (from && to) from.addEventListener('input', function () { to.value = from.value; });
+  }
+  syncText(searchInput, searchInputPc);
+  syncText(searchInputPc, searchInput);
+
+  function doSearch(input) {
+    var q = (input.value || '').trim();
+    if (!q || searching) return;
+    searching = true;
+    try { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); } catch (e) {}
+    var loader = $('enter-loader');
+    if (loader) loader.style.display = 'flex';
+    location.href = SEARCH_URL + encodeURIComponent(q);
+  }
+  [['header-search-form-pc', searchInputPc], ['header-search-form-sp', searchInput]].forEach(function (pair) {
+    var form = $(pair[0]);
+    if (!form || !pair[1]) return;
+    form.addEventListener('submit', function (e) { e.preventDefault(); doSearch(pair[1]); });
+  });
+
   if (searchButton && searchModal) {
     searchButton.addEventListener('click', function () {
       searchModal.style.display = 'block';
@@ -853,10 +891,18 @@
   }
   if ($('header-search-cancel')) {
     $('header-search-cancel').addEventListener('click', function () {
-      searchInput.value = '';
       searchModal.style.display = 'none';
     });
   }
+
+  // 検索結果から「戻る」で戻ってきたとき、ブラウザが前の状態(暗い画面・開いたままの検索欄)をそのまま復元することがあるので、元に戻す
+  window.addEventListener('pageshow', function (e) {
+    if (!e.persisted || !searching) return;
+    searching = false;
+    var loader = $('enter-loader');
+    if (loader) loader.style.display = 'none';
+    if (searchModal) searchModal.style.display = 'none';
+  });
 
   // ---- スライドメニュー: ハンバーガーボタンで開き、×・背景タップで閉じる ----
   var menu = $('header-menu');
